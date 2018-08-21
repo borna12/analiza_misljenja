@@ -102,6 +102,6 @@ rezultat=ttk.Label(prozor)
 
 prozor.bind_class("Text","<Leave>",myfunction)
 prozor.title("Analiza mišljenja")
-prozor.iconbitmap(r"favicon.ico")
+"""prozor.iconbitmap(r"favicon.ico")"""
 prozor.resizable(False, False)
 prozor.mainloop()
