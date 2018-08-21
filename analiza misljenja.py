@@ -75,7 +75,7 @@ def analiza():
     sentence=sentence.replace(".","").replace(",","").replace("?","").replace("!","")
     words = sentence.split(' ')
     for word in words:
-        classResult = classifier.classify( word_feats(word))
+        classResult = classifier.classify(word_feats(word))
         if classResult == 'neg':
             neg = neg + 1
         if classResult == 'pos':
@@ -84,7 +84,7 @@ def analiza():
     print('Positive: ' + str(float(pos)/len(words)))
     print('Negative: ' + str(float(neg)/len(words)))
     rezultat.pack()
-    rezultat.config(text="Pozitivno: " + str(round(float(pos)/len(words),2)*100)+"% Negativno: "+ str(round(float(neg)/len(words),2)*100)+"%")
+    rezultat.config(text="Pozitivno: " +  str(float(pos)/len(words)) +"% Negativno: "+ str(float(neg)/len(words))+"%")
 
 prozor=Tk()
 
