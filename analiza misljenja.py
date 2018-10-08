@@ -58,13 +58,15 @@ positive_vocab=pozitivan()
 negative_vocab=negativan()
 neutral_vocab= neutralan()
 
-print (positive_vocab)
-print (negative_vocab)
-print (neutral_vocab)
+#print (positive_vocab)
+#print (negative_vocab)
+#print (neutral_vocab)
 
 positive_features = [(word_feats(pos), 'pos') for pos in positive_vocab]
 negative_features = [(word_feats(neg), 'neg') for neg in negative_vocab]
 neutral_features = [(word_feats(neu), 'neu') for neu in neutral_vocab]
+
+
 def myfunction(*event):
     if len(TextArea.get("1.0",END))>1:
         gumb.config(state='normal')
@@ -85,15 +87,13 @@ def analiza():
     words = sentence.split(' ')
     for word in words:
         classResult = classifier.classify(word_feats(word))
+        print(classResult)
         if classResult == 'neg':
             neg = neg + 1
         if classResult == 'pos':
             pos = pos + 1
         if classResult == 'neu':
             neu = neu + 1
-    print('Positive: ' + str(format(float(pos)/len(words),'.2f')))
-    print('Negative: ' + str(format(float(neg)/len(words),'.2f')))
-    print('Neutralno: ' + str(format(float(neu)/len(words),'.2f')))
     rezultat.pack()
 
 
