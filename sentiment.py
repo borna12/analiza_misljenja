@@ -19,6 +19,14 @@ def myfunction(*event):
     else:
         gumb.config(state='disabled')
 
+def neutralan():
+    for red in io.open(script_dir+"/neutralno.txt","r", encoding="utf-8-sig"):
+        red=red.strip("\n")
+        if red=="":
+            print ()
+        else:    
+            train.append((str(red),"neutral"))
+
 def negativan(): 
     for red in io.open(script_dir+"/negativno.txt","r", encoding="utf-8-sig"):
         red=red.strip("\n").lower()
@@ -34,6 +42,8 @@ def pozitivan():
             print ()
         else:    
             train.append((str(red),"poz"))
+
+
 
 def center(win):
     win.update_idletasks()
@@ -55,6 +65,7 @@ train=[]
 def analiza():
     pozitivan()
     negativan()
+    neutralan()
     cl = NaiveBayesClassifier(train)
     sentence = TextArea.get("1.0",END)
     #sentence = sentence.lower()
@@ -63,10 +74,13 @@ def analiza():
 
     neg = 0
     pos = 0
+    neu=0
     prozor2=Tk()
     prozor2.title("Riječi iz  analize")
    
-    rezultat=ttk.Label(prozor2)
+    rezultat=ttk.Label(prozor2, anchor=CENTER, justify=CENTER)
+    rezultat2=ttk.Label(prozor2,anchor=CENTER, justify=CENTER)
+
     tree = ttk.Treeview(prozor2,columns=("rečenica"), selectmode="extended")
     scrollbar = Scrollbar(prozor2,orient="vertical")
     tree.delete(*tree.get_children())
@@ -74,7 +88,7 @@ def analiza():
     tree.column('#0', width=710)
     
     tree.heading('#1', text='mišljenje', anchor='w')
-    tree.column('#1',width=70)
+    tree.column('#1',width=90)
 
     tree.grid(row=3, column=0, columnspan=6,padx=5,pady=5,  sticky=W+E)
     ##skroler
@@ -86,12 +100,23 @@ def analiza():
         print(s2) 
         print (s.classify())
         tree.insert('', 'end', text=s2,values=s.classify())
-        if (s.classify()=="poz"):
+        if (s.classify()=="neutral"):
+            neu+=1
+        elif (s.classify()=="poz"):
             pos+=1
         else:
             neg+=1
-    rezultat.grid(row=0,column=0,)
-    rezultat.config(text="broj pozitivnih riječi: " +  str(pos) +", broj negativnih riječi: "+ str(neg))
+
+
+    rezultat.grid(row=0,column=0,sticky=W+E, columnspan=6)
+    rezultat.config(text="broj pozitivnih riječi: " +  str(pos) +", broj negativnih riječi: "+ str(neg)+", broj neutralnih riječi: "+ str(neu))
+
+    poziti=float(format(float(pos)/(pos+neg+neu),'.2f'))*100
+    nega=float(format(float(neg)/(pos+neg+neu),'.2f'))*100
+    neutra=float(format(float(neu)/(pos+neg+neu),'.2f'))*100
+
+    rezultat2.grid(row=1,column=0,sticky=W+E,columnspan=6)
+    rezultat2.config(text="pozitivnost: " +  str(poziti) +"%, negativnost: "+str(nega)+"%, neutralnost: "+ str(neutra)+"%")
     prozor2.mainloop()
 
 prozor=Tk()
