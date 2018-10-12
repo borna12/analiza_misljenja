@@ -39,24 +39,34 @@ def negativan():
 def word_feats(words):
     return dict([(word, True) for word in words])
 
-"""
-negative_vocab = ['loš', 'užasan', 'beskoristan', 'zločest', 'zloča', 'zlo', ':(', 'tužan', 'smrt', 'opasnost', 'opasan', 'lijen', 'mrzim', 'mržnja', 'glupo', 'besmisleno', 'besmislen', 'besmislenost', 'složeno', 'nejasno', 'zbunjen', 'zbunjujuće', 'tužno', 'tužan', 'tuga', 'bol', 'bolestan', 'boležljiv', 'istrebljenje', 'rasizam', 'seksizam', 'mobing', 'zlostavljanje', 'droga', 'negativno', 'negativan', 'zbunjeno', 'nejasno', 'bol', 'bolest', 'uvreda', 'vrijeđati', 'omaložavanje', 'ignoriranje', 'sramota', 'sramoćenje', 'grozan', 'grozota', 'genocid', 'rat', 'borba', 'nasilje', 'loš', 'preloš', 'oružje']
-positive_vocab = [ 'dobar', 'dobro', 'izvrsno', 'pozitivno', 'pozitivan', 'odličan', 'solidan', ':)', 'trud', 'rad', 'lijep', 'predobar', 'prelijep', 'božanstven', 'Bog','koristan','lijep',"ljubav", "marljiv","voli"]
-neutral_vocab = ['film','škola','osoba','zgrada','je','i','ali','pa','neka','ovaj','taj','to',"ići","u"]
-"""
+
+def center(win):
+    win.update_idletasks()
+    width = win.winfo_width()
+    frm_width = win.winfo_rootx() - win.winfo_x()
+    win_width = width + 2 * frm_width
+    height = win.winfo_height()
+    titlebar_height = win.winfo_rooty() - win.winfo_y()
+    win_height = height + titlebar_height + frm_width
+    x = win.winfo_screenwidth() // 2 - win_width // 2
+    y = win.winfo_screenheight() // 2 - win_height // 2
+    win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
+    win.deiconify()
 
 
 positive_vocab=pozitivan()
 negative_vocab=negativan()
 neutral_vocab= neutralan()
 
-print (positive_vocab)
-print (negative_vocab)
-print (neutral_vocab)
+#print (positive_vocab)
+#print (negative_vocab)
+#print (neutral_vocab)
 
 positive_features = [(word_feats(pos), 'pos') for pos in positive_vocab]
 negative_features = [(word_feats(neg), 'neg') for neg in negative_vocab]
 neutral_features = [(word_feats(neu), 'neu') for neu in neutral_vocab]
+
+
 def myfunction(*event):
     if len(TextArea.get("1.0",END))>1:
         gumb.config(state='normal')
@@ -70,21 +80,35 @@ def analiza():
     # Predict
     neg = 0
     pos = 0
+    neu = 0
     sentence = TextArea.get("1.0",END)
     sentence = sentence.lower()
     sentence=sentence.replace(".","").replace(",","").replace("?","").replace("!","")
     words = sentence.split(' ')
     for word in words:
         classResult = classifier.classify(word_feats(word))
+<<<<<<< HEAD
+=======
+        print(classResult)
+>>>>>>> master
         if classResult == 'neg':
             neg = neg + 1
         if classResult == 'pos':
             pos = pos + 1
-    
-    print('Positive: ' + str(float(pos)/len(words)))
-    print('Negative: ' + str(float(neg)/len(words)))
+        if classResult == 'neu':
+            neu = neu + 1
     rezultat.pack()
+<<<<<<< HEAD
     rezultat.config(text="Pozitivno: " +  str(float(pos)/len(words)) +"% Negativno: "+ str(float(neg)/len(words))+"%")
+=======
+
+
+    poziti=float(format(float(pos)/len(words),'.2f'))*100
+    nega=float(format(float(neg)/len(words),'.2f'))*100
+    neutra=float(format(float(neu)/len(words),'.2f'))*100
+    rezultat.config(text="Pozitivno: " + str(poziti) +"% Negativno: "+ str(nega) +"%"+" Neutralno: "+ str(neutra) +"%")
+
+>>>>>>> master
 
 prozor=Tk()
 
@@ -102,6 +126,7 @@ rezultat=ttk.Label(prozor)
 
 prozor.bind_class("Text","<Leave>",myfunction)
 prozor.title("Analiza mišljenja")
-"""prozor.iconbitmap(r"favicon.ico")"""
+prozor.iconbitmap(r"favicon.ico")
 prozor.resizable(False, False)
+
 prozor.mainloop()

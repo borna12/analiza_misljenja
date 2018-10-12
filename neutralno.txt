@@ -1,10 +1,41 @@
-﻿movie
-the
-sound
-was
-is
-actors
-did
-know
-words
-not
+film
+stol
+stolica
+stolici
+stoličin
+majka
+majčin
+otac
+očev
+brašno
+brašnov
+baba
+babin
+babino
+deada
+dedin
+pčela
+pčelin
+društvo
+s društvom
+ekipa
+ljudi
+ljudski
+nešto
+s nekim
+nečiji
+tvoj
+moj
+njegov
+ničiji
+svatko
+tko god
+što god
+sve
+svačiji
+tata
+tatin
+kupaonica
+
+
+
