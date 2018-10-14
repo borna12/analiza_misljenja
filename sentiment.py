@@ -61,11 +61,10 @@ def center(win):
 
 train=[]
 
-
+pozitivan()
+negativan()
+neutralan()
 def analiza():
-    pozitivan()
-    negativan()
-    neutralan()
     cl = NaiveBayesClassifier(train)
     sentence = TextArea.get("1.0",END)
     #sentence = sentence.lower()
@@ -97,8 +96,6 @@ def analiza():
     scrollbar.config(command=tree.yview)
 
     for s, s2 in zip(blob.sentences, blob2.sentences):
-        print(s2) 
-        print (s.classify())
         tree.insert('', 'end', text=s2,values=s.classify())
         if (s.classify()=="neutral"):
             neu+=1
