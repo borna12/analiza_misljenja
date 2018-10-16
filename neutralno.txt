@@ -10,7 +10,6 @@ američki
 amper
 analiza
 ananas
-anđeo
 aparat
 arhitekt
 arhitektica
@@ -3674,7 +3673,6 @@ zvonce
 zvoniti
 zvono
 zvuk
-ž
 žaba
 žalac
 žaliti

@@ -128,6 +128,9 @@ gumb=ttk.Button(prozor, text="analiziraj", command=analiza)
 gumb.pack()
 gumb.config(state='disabled')
 
+l1=ttk.Label(prozor,text="obrada može potrajati")
+l1.pack()
+
 
 
 prozor.bind_class("Text","<Leave>",myfunction)

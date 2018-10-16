@@ -408,6 +408,7 @@ sloboda
 slobodan
 smijati se
 smijeh
+smiješan
 smiješak
 smisao
 smršavjeti
@@ -502,3 +503,8 @@ graditi
 gradnja
 hamburger
 istaknuti
+anđeo
+preporuči
+preporuka
+dobre
+lijepu
