@@ -107,7 +107,6 @@ glupost
 gluh
 gluhonijem
 gluhoslijep
-primio je gol
 grijeh
 gripa
 griješiti
@@ -147,11 +146,9 @@ kiša
 klaun
 klečati
 klopka
-konju jedan
-koji konj
-koza jedna
+konju
 kozo
-koja koza
+kozo
 krađa
 krasti
 krađa
@@ -270,7 +267,7 @@ ranjenikov
 rat
 ratni
 revolver
-rugati se
+rugati
 ružan
 silovit
 silovito
@@ -336,7 +333,6 @@ zvijer
 žeđ
 žrtva
 žrtve
-žuriti se
 žutica
 agresivan
 agresivno
@@ -344,7 +340,6 @@ agresivnost
 bol
 brbljati
 briga
-brinuti se
 čekanje
 čekati
 dalek
@@ -355,9 +350,39 @@ dno
 eksplodirati
 eksplozija
 giljotina
-glasati se
 gorjeti
 gori
 grom
 hladan
 užas
+ispravljati
+izdajica
+izdajičin
+izdajnica
+izdajničin
+izdajnički
+izdajnik
+izdajnikov
+kajati
+kašalj
+kašljati
+ubiti
+ubili
+žaliti
+zubobolja
+sranje
+govno
+zijevati
+zijeva
+smrdi
+smrad
+smarade
+drek
+kiša
+kišovit
+bezveze
+nesretan
+grozno
+grozota
+umro
+zamoran

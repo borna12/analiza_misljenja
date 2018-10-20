@@ -25,7 +25,7 @@ def neutralan():
         if red=="":
             print ()
         else:    
-            train.append((str(red),"neutral"))
+            train.append((str(red),"neutralno"))
 
 def negativan(): 
     for red in io.open(script_dir+"/negativno.txt","r", encoding="utf-8-sig"):
@@ -33,7 +33,7 @@ def negativan():
         if red=="":
             print ()
         else:    
-            train.append((str(red),"neg"))
+            train.append((str(red),"negativno"))
 
 def pozitivan():
     for red in io.open(script_dir+"/pozitivno.txt","r", encoding="utf-8-sig"):
@@ -41,7 +41,7 @@ def pozitivan():
         if red=="":
             print ()
         else:    
-            train.append((str(red),"poz"))
+            train.append((str(red),"pozitivno"))
 
 
 
@@ -97,9 +97,9 @@ def analiza():
 
     for s, s2 in zip(blob.sentences, blob2.sentences):
         tree.insert('', 'end', text=s2,values=s.classify())
-        if (s.classify()=="neutral"):
+        if (s.classify()=="neutralno"):
             neu+=1
-        elif (s.classify()=="poz"):
+        elif (s.classify()=="pozitivno"):
             pos+=1
         else:
             neg+=1

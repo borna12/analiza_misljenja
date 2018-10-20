@@ -37,7 +37,6 @@ slatko
 sretan
 sretna
 sretno
-sviđati se
 svjež
 svježa
 svježe
@@ -148,7 +147,6 @@ darivati
 darovati
 dati
 divan
-diviti se
 dignuti
 diploma
 diplomat
@@ -159,6 +157,7 @@ djetinjstvo
 dobar
 dobra
 dobro
+dobri
 dolar
 dom
 doma
@@ -166,7 +165,7 @@ domaći
 domovina
 doručak
 doručkovati
-doživjeti 
+doživjeti
 doživljaj
 doživljavati
 drag
@@ -191,7 +190,6 @@ funkcionirati
 glavni
 godišnji
 zabio gol
-zabio je gol
 gospodarski
 grah
 grliti
@@ -280,6 +278,7 @@ lak
 lako
 lijek
 lijep
+lijep dan
 lijepo
 ljepota
 ljubav
@@ -366,7 +365,6 @@ prvi
 rado
 radost
 radovati
-radovati se
 raj
 razum
 razumijevati
@@ -406,7 +404,6 @@ slaviti
 slavlje
 sloboda
 slobodan
-smijati se
 smijeh
 smiješan
 smiješak
@@ -444,7 +441,6 @@ uspjeti
 Valentinovo
 vedar
 velik
-veseliti se
 veselje
 veseo
 veslo
@@ -459,6 +455,7 @@ vrijediti
 vrijednost
 zabava
 zabavan
+zabavno
 zabaviti
 zabavljati
 zadovoljan
@@ -508,3 +505,18 @@ preporuči
 preporuka
 dobre
 lijepu
+instalirati
+izumiti
+jednostavan
+jednostavno
+jesti
+kćerin
+kćerinski
+kćerka
+kćerkin
+zreo
+zreti
+znatiželjan
+znatiželjna
+zanimljiv
+zanimati
