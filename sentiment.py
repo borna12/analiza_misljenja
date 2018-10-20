@@ -8,8 +8,8 @@ from os import path
 from tkinter import *
 from tkinter import ttk
 
-script_dir = os.path.dirname(__file__)
-file_path = os.path.join(script_dir, 'pozitivno.txt')
+#script_dir = os.path.dirname(__file__)
+#file_path = os.path.join(script_dir, 'pozitivno.txt')
 
 
 
@@ -20,7 +20,7 @@ def myfunction(*event):
         gumb.config(state='disabled')
 
 def neutralan():
-    for red in io.open(script_dir+"/neutralno.txt","r", encoding="utf-8-sig"):
+    for red in io.open("neutralno.txt","r", encoding="utf-8-sig"):
         red=red.strip("\n")
         if red=="":
             print ()
@@ -28,7 +28,7 @@ def neutralan():
             train.append((str(red),"neutralno"))
 
 def negativan(): 
-    for red in io.open(script_dir+"/negativno.txt","r", encoding="utf-8-sig"):
+    for red in io.open("negativno.txt","r", encoding="utf-8-sig"):
         red=red.strip("\n").lower()
         if red=="":
             print ()
@@ -36,7 +36,7 @@ def negativan():
             train.append((str(red),"negativno"))
 
 def pozitivan():
-    for red in io.open(script_dir+"/pozitivno.txt","r", encoding="utf-8-sig"):
+    for red in io.open("pozitivno.txt","r", encoding="utf-8-sig"):
         red=red.strip("\n")
         if red=="":
             print ()
@@ -135,7 +135,7 @@ l1.pack()
 
 prozor.bind_class("Text","<Leave>",myfunction)
 prozor.title("Analiza mišljenja")
-"""prozor.iconbitmap(r"favicon.ico")"""
+prozor.iconbitmap(r"favicon.ico")
 
 
 center(prozor)
